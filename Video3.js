@@ -1,82 +1,129 @@
+Part 1:
+
 {
-    "duration": "60 seconds",
-    "format": "landscape",
-    "goal": "Create a visually rich 60-second educational video that explains the simple math behind Monte Carlo simulation with minimal introduction and maximum mathematical intuition. Use visual metaphors, pi-estimation examples, randomness animations, and the law of large numbers to clearly show why averages converge to truth.",
-    "style": {
-      "visual_style": "clean, modern, soft gradients, animated graphs, smooth transitions, gentle motion graphics, educational YouTube explainer quality",
-      "narration_style": "clear, intuitive, friendly but mathematically focused",
-      "text_on_screen": "light reinforcement, highlight equations and key terms visually"
+  "format": "1080p_landscape",
+  "duration": 60,
+  "title": "Monte Carlo Limits & Future — Part 1: A New Example",
+  "style": "dark-blue analytic theme, clean finance visuals",
+  "scenes": [
+    {
+      "type": "intro",
+      "visuals": {
+        "title": "Monte Carlo in Finance: Default Risk",
+        "animation": "credit score meters, probability curves, loan documents"
+      },
+      "voiceover": "To understand the limits of Monte Carlo, let’s look at a fresh example: predicting the probability that a loan might default."
     },
-    "structure": [
-      {
-        "time": "0-4s",
-        "scene": "Immediate visual start: hundreds of random dots appearing inside a square with a circle inside it. No long intro. Counter displays sample size growing rapidly: 1, 10, 50, 100...",
-        "narration": "Monte Carlo works because every random test gives us a tiny piece of information."
+    {
+      "type": "problem_setup",
+      "visuals": {
+        "equation": "P(default) = ?",
+        "animation": "thousands of hypothetical borrowers generated"
       },
-      {
-        "time": "4-12s",
-        "scene": "Zoom-in on the dots. Some turn blue if they fall inside the circle, others grey if outside. Ratio meter animates in real time.",
-        "narration": "When we collect many of these random samples, their average starts revealing a pattern — something meaningful.",
-        "text": "Information from Random Samples"
-      },
-      {
-        "time": "12-20s",
-        "scene": "Side-by-side panels: left shows very few dots giving unstable pi estimates jumping around wildly; right shows many dots converging smoothly.",
-        "narration": "With only a few samples, results jump around. But as we gather more, the estimate stabilizes and gets closer to the truth."
-      },
-      {
-        "time": "20-30s",
-        "scene": "Introduce an overlay of the basic pi estimation equation. The equation animates gently, not too formal.",
-        "narration": "Even with a bit of math, the idea stays simple: the fraction of points inside the circle approaches a predictable value.",
-        "equations_on_screen": [
-          "π ≈ 4 × (points_in_circle / total_points)",
-          "x² + y² ≤ r²"
-        ]
-      },
-      {
-        "time": "30-40s",
-        "scene": "Transition to pure randomness visuals: coins flipping, dice scattering, random numbers flowing like a stream.",
-        "narration": "This happens because randomness behaves predictably when repeated many times — a powerful idea called the law of large numbers.",
-        "text": "Law of Large Numbers"
-      },
-      {
-        "time": "40-48s",
-        "scene": "Visual example: 10 coin flips produce uneven results; 100 flips produce closer-to-even results; 10,000 flips stabilize at roughly 50/50. Show bar charts tightening as sample size increases.",
-        "narration": "If you flip a coin ten times, your results vary wildly. But flip it ten thousand times, and the average becomes very close to fifty-fifty."
-      },
-      {
-        "time": "48-55s",
-        "scene": "Return to the pi visualization but now with a huge number of points flooding in. A graph of estimation error shrinks toward zero.",
-        "narration": "Monte Carlo leans on this idea: the more random trials we run, the closer our average gets to the true value.",
-        "text": "More Samples → Better Estimates"
-      },
-      {
-        "time": "55-60s",
-        "scene": "Final synthesis: combine dots, randomness, and an equation overlay. Smooth animation showing many trials converging to a stable value.",
-        "narration": "In the end, Monte Carlo isn’t about exact math — it’s about trusting that large numbers reveal the truth.",
-        "text": "Monte Carlo = Randomness + Averages + Lots of Trials"
-      }
-    ],
-    "audio": {
-      "music": "gentle educational background music",
-      "sound_effects": "light clicks or pops as random points appear"
+      "voiceover": "Banks need to know how risky loans are. Monte Carlo simulates thousands of potential future scenarios to estimate the chance of default."
     },
-    "requirements": {
-      "must_include": [
-        "60 seconds total",
-        "landscape orientation",
-        "heavy focus on mathematical intuition",
-        "pi example with dots",
-        "coin flip example for law of large numbers",
-        "at least one real-world equation",
-        "emphasis on averaging and convergence"
-      ],
-      "avoid": [
-        "long introduction",
-        "too much text",
-        "overly formal mathematical derivations",
-        "non-math-related examples"
-      ]
+    {
+      "type": "input_factors",
+      "visuals": {
+        "animation": "sliders labeled: income, expenses, interest rate, job stability",
+        "text": "Random variation for each factor"
+      },
+      "voiceover": "Each simulation randomly adjusts factors like income changes, interest rate fluctuations, or job stability."
+    },
+    {
+      "type": "transition",
+      "visuals": {
+        "animation": "future timelines fanning outward"
+      },
+      "voiceover": "But the magic — and the limitation — lies in running enough scenarios, which we explore next."
     }
-  }
-  
+  ]
+}
+
+
+Part 2:
+
+{
+  "format": "1080p_landscape",
+  "duration": 60,
+  "title": "Monte Carlo Limits & Future — Part 2: The Weaknesses",
+  "style": "dark-blue analytic theme, glitchy slow-convergence visuals",
+  "scenes": [
+    {
+      "type": "slow_convergence",
+      "visuals": {
+        "equation": "Error ∝ 1 / √N",
+        "animation": "curve slowly decreasing even with massive samples"
+      },
+      "voiceover": "Monte Carlo’s biggest weakness is slow convergence. To cut error in half, you need four times as many samples."
+    },
+    {
+      "type": "finance_example",
+      "visuals": {
+        "animation": "loan default probability stabilizing only after millions of simulations"
+      },
+      "voiceover": "For loan default risk, this means running millions of scenarios before the estimate becomes reliable."
+    },
+    {
+      "type": "limitations",
+      "visuals": {
+        "text": [
+          "Needs huge sample sizes",
+          "Can be slower than other methods",
+          "Randomness can be noisy"
+        ],
+        "animation": "noisy graphs smoothing out very slowly"
+      },
+      "voiceover": "Monte Carlo is powerful, but it demands time and computation because randomness is inherently noisy."
+    },
+    {
+      "type": "transition",
+      "visuals": {
+        "animation": "noisy graph transitions into neural network diagram"
+      },
+      "voiceover": "But modern technology is pushing Monte Carlo far beyond its original form."
+    }
+  ]
+}
+
+
+
+Part 3:
+
+{
+  "format": "1080p_landscape",
+  "duration": 60,
+  "title": "Monte Carlo Limits & Future — Part 3: The Modern Era",
+  "style": "dark-blue analytic theme with glowing futuristic elements",
+  "scenes": [
+    {
+      "type": "modern_ai",
+      "visuals": {
+        "animation": "AI models making uncertainty predictions with probability clouds"
+      },
+      "voiceover": "Today, AI models use Monte Carlo ideas — especially in uncertainty estimation and Bayesian inference."
+    },
+    {
+      "type": "science_uses",
+      "visuals": {
+        "animation": "climate grids, particle simulations, molecular models"
+      },
+      "voiceover": "Scientists rely on Monte Carlo for climate projections, physics simulations, and modeling complex systems."
+    },
+    {
+      "type": "perspective",
+      "visuals": {
+        "text": "Simple. Flexible. Universal.",
+        "animation": "word cloud emerging from random particles"
+      },
+      "voiceover": "Despite its limits, Monte Carlo remains one of the simplest and most flexible tools in computational science."
+    },
+    {
+      "type": "closing",
+      "visuals": {
+        "animation": "particles converge into the final message"
+      },
+      "voiceover": "It all starts with randomness — but in large numbers, randomness becomes insight."
+    }
+  ]
+}
